@@ -1,7 +1,7 @@
 import React from 'react';
 import Select from 'react-select';
-import { PHOTO_CATEGORY_OPTIONS } from '../../../../constants/global';
-import Image from '../../../../constants/images';
+import { PHOTO_CATEGORY_OPTIONS } from 'constants/global';
+import Image from 'constants/images';
 
 import { Form, FormGroup, Input, Label, Button } from 'reactstrap';
 import PropTypes from 'prop-types';

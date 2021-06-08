@@ -1,7 +1,7 @@
 import React from 'react';
 import './AddEditPage.css';
-import Banner from '../../../../components/Banner';
-import PhotoForm from '../../components/PhotoForm';
+import Banner from 'components/Banner';
+import PhotoForm from 'features/Photo/components/PhotoForm';
 
 AddEditPage.propTypes = {
 
