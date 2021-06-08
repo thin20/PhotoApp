@@ -1,0 +1,90 @@
+.photo {
+  position: relative;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.photo > img {
+  width: 100%;
+  vertical-align: middle;
+  -webkit-transition: all 0.45s ease 0s;
+  transition: all 0.45s ease 0s;
+}
+
+.photo__title {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.photo__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
+  opacity: 0;
+  -webkit-transition: all 0.25s ease 0s;
+  transition: all 0.25s ease 0s;
+}
+
+.photo__actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row nowrap;
+          flex-flow: row nowrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1rem;
+  opacity: 0;
+  -webkit-transition: all 0.35s ease 0s;
+  transition: all 0.35s ease 0s;
+  -webkit-transform: translateY(1rem);
+          transform: translateY(1rem);
+}
+
+.photo__actions > div {
+  width: 50%;
+  padding: 0 0.5rem;
+}
+
+.photo__actions button {
+  width: 100%;
+}
+
+.photo:hover {
+  cursor: pointer;
+}
+
+.photo:hover > img {
+  -webkit-transform: scale(1.35);
+          transform: scale(1.35);
+}
+
+.photo:hover .photo__overlay,
+.photo:hover .photo__actions {
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+/*# sourceMappingURL=PhotoCard.css.map */
