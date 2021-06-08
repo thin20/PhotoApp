@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AACK,AAAD,qBAAS,CAAC;EACN,aAAa,EAAE,IAAI;CACtB;;AAEA,AAAD,oBAAQ,CAAC;EACL,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EACb,aAAa,EAAE,MAAM;EACrB,gBAAgB,EAAE,IAAI;CASzB;;AAbA,AAMG,oBANI,GAMA,GAAG,CAAC;EACJ,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EAEZ,aAAa,EAAE,MAAM;EACrB,cAAc,EAAE,MAAM;CACzB",
+    "sources": [
+        "RandomPhoto.scss"
+    ],
+    "names": [],
+    "file": "RandomPhoto.css"
+}
