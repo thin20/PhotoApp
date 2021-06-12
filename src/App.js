@@ -1,13 +1,31 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 import NotFound from './components/NotFound';
 import Header from './components/Header';
+import productApi from 'api/productApi';
 
 // Lazy load - Code splitting
 const Photo = React.lazy(() => import('./features/Photo'));
 
 function App() {
+    useEffect(() => {
+        const fetchProductList = async () => {
+            try {
+                const params = {
+                    _page: 1, _limit: 10
+                }
+                const response = await productApi.getAll(params);
+                console.log(response);
+            }
+            catch (error) {
+                console.log('Failed to fetch product list: ', error)
+            }
+        }
+
+        fetchProductList();
+    }, []);
+
     return (
         <div className="photo-app">
             <Suspense fallback={<div>Loading...</div>}>
