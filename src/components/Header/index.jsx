@@ -20,15 +20,15 @@ function Header(props) {
                             rel='noopener noreferrer'
                         >
                             Easy Frontend
-                    </a>
+                        </a>
                     </Col>
 
                     <Col xs="auto">
                         <NavLink
                             className="header__link"
-                            to="/photos" activeClassName="header__link--active"
+                            to="/sign-in" activeClassName="header__link--active"
                         >
-                            Redux Project
+                            Sign In
                         </NavLink>
                     </Col>
                 </Row>
