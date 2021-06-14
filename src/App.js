@@ -7,6 +7,9 @@ import productApi from 'api/productApi';
 import SignIn from 'features/Auth/pages/SignIn';
 // import { Button } from 'bootstrap';
 import firebase from 'firebase';
+import { useDispatch } from 'react-redux';
+import { getMe } from 'app/userSlice';
+import { unwrapResult } from '@reduxjs/toolkit';
 
 // Lazy load - Code splitting
 const Photo = React.lazy(() => import('./features/Photo'));
@@ -20,6 +23,8 @@ firebase.initializeApp(config);
 
 
 function App() {
+    const dispatch = useDispatch();
+
     useEffect(() => {
         const fetchProductList = async () => {
             try {
@@ -32,7 +37,7 @@ function App() {
                 console.log('Response: ', response);
             }
             catch (error) {
-                console.log('Failed to fetch product list: ', error)
+                console.log('Failed to fetch product list: ', error);
             }
         }
 
@@ -48,11 +53,19 @@ function App() {
                 return;
             }
 
+            // Get me when signed in
+
             // console.log('Logged in user', user.displayName);
             const token = await user.getIdToken();
             // console.log('Logged in user token: ', token);
-
             localStorage.setItem('firebaseui::rememberedAccounts', token);
+            try {
+                const actionResult = await dispatch(getMe());
+                const currentUser = unwrapResult(actionResult);
+                console.log('Logged in user: ', currentUser);
+            } catch (error) {
+                console.log('Fail to login: ', error.message);
+            }
         });
         return () => unregisterAuthObserver(); // Make sure we un-register Firebase observers when the component unmounts.
     }, []);
